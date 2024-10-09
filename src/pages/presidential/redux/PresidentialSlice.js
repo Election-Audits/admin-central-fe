@@ -111,7 +111,7 @@ export const updatePresidentialCandidateStatus = createThunk(
 )
 
 
-const presidentialCandidatesSlice = createSlice({
+const  presidentialCandidatesSlice = createSlice({
     name: 'candidates',
     initialState,
     reducers: {},
@@ -202,4 +202,5 @@ const presidentialCandidatesSlice = createSlice({
     }
     });
 
+export default presidentialCandidatesSlice;
 export const { } = presidentialCandidatesSlice.actions
