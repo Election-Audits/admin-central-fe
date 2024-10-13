@@ -28,6 +28,7 @@ import '@fontsource/public-sans/600.css';
 import '@fontsource/public-sans/700.css';
 
 // project import
+import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
