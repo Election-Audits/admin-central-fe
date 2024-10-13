@@ -90,7 +90,7 @@ export default function PollingStation() {
                 validationSchema={PollingStationSchema}
                 onSubmit={handleSubmit}
               >
-                {({ setFieldValue }) => (
+                {() => (
                   <Form className="space-y-4">
                     <div>
                       <label htmlFor="name" className="block mb-1">
