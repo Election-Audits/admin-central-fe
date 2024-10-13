@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-
+import * as apiRequest from './PresidentCrud'
 const initialState = {
     listLoading: false,
     isLoading: false,
@@ -11,10 +11,10 @@ const initialState = {
 
 export const getAllCandidates= createAsyncThunk(
     'candidates/getAll',
-    async () => {
+    async (filter) => {
         try {
-            const response = await fetch('https://api.example.com/candidates')
-            const data = await response.json()
+            const response = await apiRequest.getAllPresidentialCandidates(filter)
+            const data = await response.data;
             return data
         } catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -27,8 +27,8 @@ export const selectPresidentialCandidate = createAsyncThunk(
     'candidates/select',
     async (candidateId) => {
         try {
-            const response = await fetch(`https://api.example.com/candidates/${candidateId}`)
-            const data = await response.json()
+            const response = await apiRequest.getPresidentialCandidateById(candidateId)
+            const data = await response
             return data
         } catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -41,13 +41,7 @@ export const createPresidentialCandidate = createAsyncThunk(
     'candidates/create',
     async (candidate) => {
         try {
-            const response = await fetch('https://api.example.com/candidates', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(candidate),
-            })
+            const response = await apiRequest.createPresidentialCandidate(candidate);
             const data = await response.json()
             return data
         } catch (error) {
@@ -61,13 +55,7 @@ export const updatePresidentialCandidate = createAsyncThunk(
     'candidates/update',
     async (candidate) => {
         try {
-            const response = await fetch(`https://api.example.com/candidates/${candidate.id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(candidate),
-            })
+            const response = await apiRequest.updatePresidentialCandidate(candidate)
             const data = await response.json()
             return data
         } catch (error) {
@@ -80,9 +68,7 @@ export const deletePresidentialCandidate = createThunk(
     'candidates/delete',
     async (candidateId) => {
         try {
-            await fetch(`https://api.example.com/candidates/${candidateId}`, {
-                method: 'DELETE',
-            })
+            await apiRequest.createPresidentialCandidate(candidateId);
             return candidateId
         } catch (error) {
             return thunkAPI.rejectWithValue(error)
@@ -90,18 +76,11 @@ export const deletePresidentialCandidate = createThunk(
     }
 )
 
-
 export const updatePresidentialCandidateStatus = createThunk(
     'candidates/status',
     async (candidateId, status) => {
         try {
-            const response = await fetch(`https://api.example.com/candidates/${candidateId}/status`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ status }),
-            })
+            const response = await apiRequest.updatePresidentialCandidateStatus(candidateId, status)
             const data = await response.json()
             return data
         } catch (error) {
@@ -111,7 +90,7 @@ export const updatePresidentialCandidateStatus = createThunk(
 )
 
 
-const  presidentialCandidatesSlice = createSlice({
+const presidentialCandidatesSlice = createSlice({
     name: 'candidates',
     initialState,
     reducers: {},

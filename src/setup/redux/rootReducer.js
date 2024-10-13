@@ -1,9 +1,7 @@
 import {combineReducers} from 'redux'
-
-import {PresidentialSlice} from "../..pages/presidental/redux";
-
+import  presidentialCandidatesSlice from '../../pages/presidential/redux/PresidentialSlice'
 
 export const rootReducer = combineReducers({
-    auth: PresidentialSlice.reducer,
+    auth: presidentialCandidatesSlice.reducer,
   
 });
