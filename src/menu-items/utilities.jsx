@@ -22,28 +22,42 @@ const icons = {
 
 const utilities = {
   id: 'utilities',
-  title: 'Utilities',
+  // title: 'Utilities',
   type: 'group',
   children: [
     {
-      id: 'util-typography',
-      title: 'Typography',
+      id: 'util-home',
+      title: 'Home',
       type: 'item',
-      url: '/typography',
+      url: '/home',
       icon: icons.FontSizeOutlined
     },
     {
-      id: 'util-color',
-      title: 'Color',
+      id: 'util-tasks',
+      title: 'Tasks',
       type: 'item',
-      url: '/color',
+      url: '/tasks',
       icon: icons.BgColorsOutlined
     },
     {
-      id: 'util-shadow',
-      title: 'Shadow',
+      id: 'util-political-parties',
+      title: 'Political Parties',
       type: 'item',
-      url: '/shadow',
+      url: '/political-parties',
+      icon: icons.BarcodeOutlined
+    },
+    {
+      id: 'util-polling-station',
+      title: 'Polling Station',
+      type: 'item',
+      url: '/polling-station',
+      icon: icons.BarcodeOutlined
+    },
+    {
+      id: 'util-elections',
+      title: 'Elections',
+      type: 'item',
+      url: '/elections',
       icon: icons.BarcodeOutlined
     }
   ]
