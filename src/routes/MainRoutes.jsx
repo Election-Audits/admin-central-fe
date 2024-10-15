@@ -3,6 +3,7 @@ import { lazy } from 'react';
 // project import
 import Loadable from 'components/Loadable';
 import Dashboard from 'layout/Dashboard';
+import ElectionPage from 'pages/dashboard/electionPage';
 const PollingStation = Loadable(lazy(() => import('pages/dashboard/pollingStation')));
 
 const Color = Loadable(lazy(() => import('pages/component-overview/color')));
@@ -47,6 +48,10 @@ const MainRoutes = {
     {
       path: 'polling-station',
       element: <PollingStation />
+    },
+    {
+      path: 'elections',
+      element: <ElectionPage />
     }
   ]
 };
