@@ -13,7 +13,6 @@ const PresidentialPage = () => {
           </div>
         </div>
 
-        {/* Second card (8 columns) */}
         <div className="col-span-12 md:col-span-8">
           <div className="bg-white shadow-lg rounded-lg p-6">
             <h2 className="text-xl font-bold mb-2">Card 2</h2>

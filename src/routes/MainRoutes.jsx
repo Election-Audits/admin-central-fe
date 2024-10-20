@@ -12,6 +12,9 @@ const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/index')));
 // render - sample page
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
 
+
+const PresidentialPage = Loadable(lazy(() => import('pages/presidential/components/PresidentialPage')));
+
 // ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
@@ -37,6 +40,11 @@ const MainRoutes = {
     },
     {
       path: 'sample-page',
+      element: <SamplePage />
+    },
+    
+    {
+      path: 'presidential',
       element: <SamplePage />
     },
     {
