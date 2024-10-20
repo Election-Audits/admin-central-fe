@@ -3,9 +3,11 @@ import { lazy } from 'react';
 // project import
 import Loadable from 'components/Loadable';
 import Dashboard from 'layout/Dashboard';
+import ElectionPage from 'pages/dashboard/electionPage';
+const PollingStation = Loadable(lazy(() => import('pages/dashboard/pollingStation')));
 
 const Color = Loadable(lazy(() => import('pages/component-overview/color')));
-const Typography = Loadable(lazy(() => import('pages/component-overview/typography')));
+// const Typography = Loadable(lazy(() => import('pages/component-overview/typography')));
 const Shadow = Loadable(lazy(() => import('pages/component-overview/shadows')));
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/index')));
 
@@ -52,8 +54,12 @@ const MainRoutes = {
       element: <Shadow />
     },
     {
-      path: 'typography',
-      element: <Typography />
+      path: 'polling-station',
+      element: <PollingStation />
+    },
+    {
+      path: 'elections',
+      element: <ElectionPage />
     }
   ]
 };
