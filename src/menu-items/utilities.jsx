@@ -25,20 +25,20 @@ const utilities = {
   // title: 'Utilities',
   type: 'group',
   children: [
-    {
-      id: 'util-home',
-      title: 'Home',
-      type: 'item',
-      url: '/home',
-      icon: icons.FontSizeOutlined
-    },
-    {
-      id: 'util-tasks',
-      title: 'Tasks',
-      type: 'item',
-      url: '/tasks',
-      icon: icons.BgColorsOutlined
-    },
+    // {
+    //   id: 'util-home',
+    //   title: 'Home',
+    //   type: 'item',
+    //   url: '/home',
+    //   icon: icons.FontSizeOutlined
+    // },
+    // {
+    //   id: 'util-tasks',
+    //   title: 'Tasks',
+    //   type: 'item',
+    //   url: '/tasks',
+    //   icon: icons.BgColorsOutlined
+    // },
     {
       id: 'util-political-parties',
       title: 'Political Parties',

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const PresidentialPage = () => {
   return (
@@ -21,7 +21,7 @@ const PresidentialPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PresidentialPage
+export default PresidentialPage;
